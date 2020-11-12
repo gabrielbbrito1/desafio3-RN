@@ -2,20 +2,20 @@
 import React from 'react';
 import { StyleSheet, Text,  View } from 'react-native';
 import {NavigationContainer}  from '@react-navigation/native'
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import {createStackNavigator} from '@react-navigation/stack'
 import PeopleDetailsPage from './src/pages/PeopleDetailsPage'
 import PeoplePage  from './src/pages/PeoplePage'
 
-const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
 
 function App(){
   return(
     <View style = {style.container}>
       <NavigationContainer>
-        <Drawer.Navigator initialRouteName = "Lista de Pessoas" >
-          <Drawer.Screen name = "Lista de Pessoas" component = {PeoplePage} />
-          <Drawer.Screen name = "Detalhe das pessoas" component = {PeopleDetailsPage} />
-        </Drawer.Navigator>
+        <Stack.Navigator initialRouteName = "Lista de Pessoas" >
+          <Stack.Screen name = "Lista de Pessoas" component = {PeoplePage} />
+          <Stack.Screen name = "Detalhe das pessoas" component = {PeopleDetailsPage} />
+        </Stack.Navigator>
       </NavigationContainer>
     </View>
   )
