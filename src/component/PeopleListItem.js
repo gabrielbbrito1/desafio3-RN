@@ -1,20 +1,18 @@
 import React from 'react'
 import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native'
-import { color } from 'react-native-reanimated'
 import {toUpperFirst} from '../util'
 
 const PeopleListItem = props => {
-    const {peoples, onPressItemDetails} = props
-    const {name} = peoples.nome
+    const {people, onPressItemDetails} = props
+    const {name} = people.nome
     return(
     <TouchableOpacity onPress={() => {
-        onPressItemDetails(peoples)
+        onPressItemDetails(people)
     }}>
-    <View style = {style.line}>
+        <View style = {style.line}>
         <Image style = {style.avatar} 
-        source = {{uri: peoples.imagem}} />
-        <Text style = {style.lineText}
-         key = {name}>
+        source = {{uri: people.imagem}} />
+        <Text style = {style.lineText} key = {name}>
         {`${toUpperFirst(name)}`}
         </Text>
     </View>
@@ -22,7 +20,6 @@ const PeopleListItem = props => {
 
     )
 }
-
 const  style = StyleSheet.create(
     {
         line: {

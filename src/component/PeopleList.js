@@ -3,34 +3,32 @@ import {View, StyleSheet, SafeAreaView, FlatList, Text} from 'react-native'
 import PeopleListItem from './PeopleListItem'
 
 const PeopleList = props => {
-    const {people, onPressItem} = props   
+    const {peoples, onPressItem} = props   
     const renderItem = ({item}) =>{
         return (
             <PeopleListItem 
-            key = {item.nome.peoples}
-            peoples = {item}
+            key = {item.nome.name}
+            people = {item}
             onPressItemDetails = {onPressItem}
             />
         )
     }
-
     const header= () => {
         return (
             <View style={style.headerStyle}>
                 <Text style={style.titleStyle}>
-                    Perfis
+                    Perfil
                 </Text>
             </View>
         )
     }
-
     return(
         <View style = {style.container}>
             <SafeAreaView>
                 <FlatList
-                    data={people}
+                    data={peoples}
                     renderItem={renderItem}
-                    keyExtractor={(item) => {item.nome.peoples}}
+                    keyExtractor={(item) => {item.nome.name}}
                     ListHeaderComponent={header}
                     stickyHeaderIndices={[0]}
                 />
