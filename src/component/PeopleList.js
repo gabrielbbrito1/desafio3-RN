@@ -4,7 +4,8 @@ import PeopleListItem from './PeopleListItem'
 
 const PeopleList = props => {
     const {peoples, onPressItem} = props   
-    const renderItem = ({item}) =>{
+    const renderItem = ({item}) => {
+        console.log('AQUI', item)
         return (
             <PeopleListItem 
             key = {item.nome.name}
@@ -28,9 +29,8 @@ const PeopleList = props => {
                 <FlatList
                     data={peoples}
                     renderItem={renderItem}
-                    keyExtractor={(item) => {item.nome.name}}
+                    keyExtractor={(item) => item.nome.name}
                     ListHeaderComponent={header}
-                    stickyHeaderIndices={[0]}
                 />
             </SafeAreaView>
         </View>

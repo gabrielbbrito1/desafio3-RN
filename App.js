@@ -12,7 +12,7 @@ function App(){
   return(
     <View style = {style.container}>
       <NavigationContainer>
-        <Drawer.Navigator initialRouteName = "PeoplePage" >
+        <Drawer.Navigator initialRouteName = "Lista de Pessoas" >
           <Drawer.Screen name = "Lista de Pessoas" component = {PeoplePage} />
           <Drawer.Screen name = "Detalhe das pessoas" component = {PeopleDetailsPage} />
         </Drawer.Navigator>

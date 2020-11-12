@@ -7,7 +7,9 @@ const PeopleListItem = props => {
     const {name} = people.nome
     return(
     <TouchableOpacity onPress={() => {
+        console.log(people)
         onPressItemDetails(people)
+        console.log("Função",onPressItemDetails)
     }}>
         <View style = {style.line}>
         <Image style = {style.avatar} 
